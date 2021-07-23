@@ -33,10 +33,6 @@
 
   
   
-    
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-
-  
 <meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
@@ -120,6 +116,8 @@
 <a href="/2021/07/22/M4%E7%94%B7%E5%B0%8F%E4%BA%BA%E5%88%86%E4%BA%AB/#comments" class="article-comment-link">
   
     
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/07/22/M4%E7%94%B7%E5%B0%8F%E4%BA%BA%E5%88%86%E4%BA%AB/" itemprop="commentCount"></span>
+    
     
     
     
@@ -196,8 +194,8 @@
       
       
         
-  <div id="comments"></div>
 
+  <section id="comments" class="vcomment"></section>
 
 
 
@@ -209,22 +207,6 @@
     </footer>
   </div>
 </article>
-
-	<div id="gitalk-container"></div>
-	<link rel="stylesheet" href="https://unpkg.com/gitalk@latest/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
-<script src="https://priesttomb.github.io/js/md5.min.js"></script>
-<script type="text/javascript">
-    new Gitalk({
-        clientID: '8d5c25e3773fd32c2995',
-        clientSecret: '872d734a1f1d873e46f6db8533d6408e6b812767',
-        repo: 'QiuGuangYun1901.github.io',
-        owner: 'QiuGuangYun1901',
-        admin: 'QiuGuangYun1901',
-        id: md5(location.pathname),
-        distractionFreeMode: true
-    }).render('gitalk-container')
-</script>
 </section>
         
           <aside id="sidebar">
@@ -370,28 +352,30 @@
 
 
 
-  
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
 
   
-<script src="//cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
 
   <script>
-    var gitalk = new Gitalk({
-      clientID: '8d5c25e3773fd32c2995',
-      clientSecret: '872d734a1f1d873e46f6db8533d6408e6b812767',
-      repo: 'QiuGuangYun1901.github.io',
-      owner: 'QiuGuangYun1901',
-      admin: [''],
-      id: md5(window.location.pathname),
-      distractionFreeMode: false,
-      language: 'zh-CN',
-      pagerDirection: 'last'
+    var GUEST_INFO = ['nick','mail','link'];
+    var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+        return GUEST_INFO.indexOf(item) > -1
     });
-    gitalk.render('comments');
+    var notify = 'true' == true;
+    var verify = 'true' == true;
+    new Valine({
+        el: '.vcomment',
+        notify: notify,
+        verify: verify,
+        appId: "dgLyyTU2EzzyE9AdvuUwaYn1-gzGzoHsz",
+        appKey: "v7d8aSHnzocwsXERsxwL6SVw",
+        placeholder: "Just go go",
+        pageSize:'10',
+        avatar:'mm',
+        lang:'zh-cn'
+    });
   </script>
-
-
 
 
 

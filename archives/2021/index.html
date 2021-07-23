@@ -33,10 +33,6 @@
 
   
   
-    
-<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-
-  
 <meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
@@ -295,28 +291,30 @@
 
 
 
-  
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
 
   
-<script src="//cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
 
   <script>
-    var gitalk = new Gitalk({
-      clientID: '8d5c25e3773fd32c2995',
-      clientSecret: '872d734a1f1d873e46f6db8533d6408e6b812767',
-      repo: 'QiuGuangYun1901.github.io',
-      owner: 'QiuGuangYun1901',
-      admin: [''],
-      id: md5(window.location.pathname),
-      distractionFreeMode: false,
-      language: 'zh-CN',
-      pagerDirection: 'last'
+    var GUEST_INFO = ['nick','mail','link'];
+    var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+        return GUEST_INFO.indexOf(item) > -1
     });
-    gitalk.render('comments');
+    var notify = 'true' == true;
+    var verify = 'true' == true;
+    new Valine({
+        el: '.vcomment',
+        notify: notify,
+        verify: verify,
+        appId: "dgLyyTU2EzzyE9AdvuUwaYn1-gzGzoHsz",
+        appKey: "v7d8aSHnzocwsXERsxwL6SVw",
+        placeholder: "Just go go",
+        pageSize:'10',
+        avatar:'mm',
+        lang:'zh-cn'
+    });
   </script>
-
-
 
 
 
